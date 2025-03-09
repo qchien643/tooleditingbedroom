@@ -1,0 +1,125 @@
+
+html,body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #050305;
+  /* background-image: linear-gradient(to right, #36123f, #44183d, #4e213b, #562a3b, #5c353d, #663742, #713a47, #7b3c4c, #8b365c, #953072, #982f8f, #8f37b1); */
+}
+
+@font-face {
+  font-family: 'cyberpunkfont';
+  src: url('font/Broken_Console_Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'minecraftfont';
+  src: url('font/SVN-Coders_Crux.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+/* *:not(.chat-container) {
+  font-family: 'cyberpunkfont';
+} */
+
+
+#root{
+  height: 100%;
+  width: 100%;
+}
+
+/* Áp dụng cho toàn bộ container theo Grid tương tự bố cục ban đầu */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 0.3fr 1.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1.2fr 0.3fr; 
+  gap: 0px 0px; 
+}
+
+/* Thanh title nằm ngang trên cùng */
+.container-title {
+  grid-area: 1 / 1 / 2 / 11;
+  color: #F54DCD;
+  font-family: "cyberpunkfont";
+  
+  /* border-right: 1px solid #F54DCD; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar bên trái */
+.container-sidebar {
+  grid-area: 2 / 1 / 10 / 2;
+  border-top:1px solid #F54DCD;
+  border-right:1px solid #F54DCD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Khu vực main: chứa các panel resizable (flowchart, chatbot, model) */
+.container-main {
+  grid-area: 2 / 2 / 10 / 11;
+  border-top: 1px solid #F54DCD;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Vùng flowchart (nằm trên bên trái của main) */
+.container-user-flowchart {
+  height: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid #F54DCD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Vùng chatbot (nằm dưới bên trái của main) */
+.container-user-chatbot {
+  height: 100%;
+  background-color: #e0e0e0;
+  border: 1px solid #F54DCD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* Vùng model (bên phải của main) */
+.container-user-model {
+  height: 100%;
+  background-color: #d0e0ff;
+  border: 1px solid #F54DCD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+.container-footer {
+  grid-area: 10 / 1 / 11 / 11;
+  border-top: 1px solid #F54DCD;
+  color: #F54DCD;
+  font-family: "cyberpunkfont";
+  display: flex;
+  gap : 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style cho thanh resize handle (có thể tuỳ chỉnh thêm) */
+.custom-handle {
+  background-color: #ccc;
+  cursor: col-resize;
+}
+
+[data-panel-group-direction="vertical"] .custom-handle {
+  cursor: row-resize;
+}

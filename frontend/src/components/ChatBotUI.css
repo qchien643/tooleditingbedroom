@@ -1,0 +1,37 @@
+/* ChatbotUI.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+.chat-container {
+  font-family: 'cyberpunkfont';
+  font-size: 16px;
+}
+
+
+/* Ghi đè nền của toàn bộ vùng hội thoại */
+.custom-main-container {
+    background-color: black !important;
+    
+  }
+
+  .cs-message__html-content{
+    font-family: 'cyberpunkfont';
+  }
+
+  
+  /* Ghi đè nền cho bong bóng tin nhắn của cả bot (incoming) và người dùng (outgoing) */
+  .cs-message--incoming .cs-message__content,
+  .cs-message--outgoing .cs-message__content {
+
+    background-color: black;
+    border: 1px solid #F54DCD;
+    /* border-radius: 10px; */
+    color: #F54DCD;  
+    font-family: 'cyberpunkfont';
+
+  }
+
+  .cs-message-input{
+    background-color: #F54DCD;
+  }
+  
