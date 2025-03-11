@@ -1,0 +1,59 @@
+{
+    "_comment": "noguchi_coffee_table was temporarily removed because it's not a desk",
+    "bed": [
+        "bed_1",
+        "bed_simple",
+        
+        "poliform_bed",
+        "queen-bed"
+    ],
+    "chair": [
+        "fly_dinner_chair",
+        "gaming_chair",
+        "ikea_markus_office_chair",
+        "office_chair",
+        "quersus_gaming_chair_vaos.3.1_pearl_white"
+    ],
+    "decorateFurniture": [
+        "lewie_console_table",
+        "shelf",
+        "table_furniture",
+        "wooden_cupboard_with_door"
+    ],
+    "door": [
+        "door_with_cardreader",
+        "modern_door",
+        "modern_door_1",
+        "modern_metal_windowed_door",
+        "modern_wood_door"
+    ],
+    "rug": [
+        "bhadoi_rug",
+        "kuuma_ye_rug_by_kristiina_lassus"
+    ],
+    "table": [
+        "desk",
+        "folding_table",
+        "industrial_table",
+        "modern_industrial_desk",
+        
+        "office_desk_140x60",
+        "simple_office_table",
+        "soviet_table",
+        "table",
+        "table_1"
+    ],
+    "wardrobe": [
+        "celestine_four_door_wardrobeobj",
+        "wardrobe_classic",
+        "wardrobe_low_poly"
+    ],
+    "window": [
+        
+        "pvc_still_window_with_sill",
+        "window_1",
+        "window_3",
+        "window_4",
+        "window_5"
+    ]
+}

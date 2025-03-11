@@ -14,78 +14,83 @@ import sendDataBackend from '../ultis/sendtobackend';
 const ChatbotUI = () => {
   // Danh sách tin nhắn
   const [messages, setMessages] = useState([]);
-  // Biến kiểm soát: nếu đang chờ phản hồi của bot thì disable input
+  // Kiểm soát "đang chờ bot trả lời" để disable input
   const [isAwaitingBot, setIsAwaitingBot] = useState(false);
-  // Biến hiển thị trạng thái "bot đang gõ"
+  // Hiển thị trạng thái "bot đang gõ"
   const [isTyping, setIsTyping] = useState(false);
+  
 
-  const handleSend = (text) => {
-    // Nếu đang chờ phản hồi từ bot, không cho phép gửi thêm tin
+  async function handleSend(inputText) {
+    // Nếu đang chờ phản hồi từ bot, không cho phép gửi thêm
     if (isAwaitingBot) return;
 
-    // Tạo tin nhắn của người dùng
+    // Loại bỏ các thẻ HTML khỏi text (nếu có)
+    const text = inputText.replace(/<[^>]*>/g, "");
+
+    // Tạo tin nhắn mới của user
     const newUserMessage = {
       id: messages.length + 1,
       sender: 'user',
       message: text,
     };
 
-    // Cập nhật danh sách tin nhắn và set trạng thái chờ phản hồi
-    setMessages((prev) => [...prev, newUserMessage]);
+    // Cập nhật danh sách tin nhắn
+    const updatedMessages = [...messages, newUserMessage];
+    setMessages(updatedMessages);
+
+    // Chuyển sang trạng thái chờ phản hồi
     setIsAwaitingBot(true);
     setIsTyping(true);
 
-    // Giả lập phản hồi của bot sau 2 giây
-    setTimeout(() => {
+    // Gọi API/hàm gửi dữ liệu tới backend
+    const botResponse = await sendDataBackend({
+      data: updatedMessages,
+      flag: 'message'
+    });
 
-      const botMessage = sendDataBackend({
-        data : messages,
-        flag : "100"
-      });
-      console.log(botMessage);
+    // Tạo tin nhắn phản hồi của bot
+    const newBotMessage = {
+      id: updatedMessages.length + 1,
+      sender: 'bot',
+      message: JSON.stringify(botResponse.data) // tuỳ cách hiển thị
+    };
 
-      const newBotMessage = {
-        id: messages.length + 2,
-        sender: 'bot',
-        message: JSON.stringify(botMessage)
-      };
+    // Thêm tin nhắn bot vào danh sách
+    setMessages(prev => [...prev, newBotMessage]);
 
-      setMessages((prev) => [...prev, newBotMessage]);
-      setIsAwaitingBot(false);
-      setIsTyping(false);
-    }, 2000);
-  };
+    // Kết thúc trạng thái chờ
+    setIsAwaitingBot(false);
+    setIsTyping(false);
+  }
 
   return (
-    <div className="chat-container" style={{height:"100%" , width:"100%" } }>
+    <div className="chat-container" style={{ height: '100%', width: '100%' }}>
       <MainContainer>
-      <ChatContainer>
-        <MessageList 
-          typingIndicator={isTyping ? <TypingIndicator content="Bot is typing..." /> : null}
-        >
-          {messages.map((msg) => (
-            <Message
-              key={msg.id}
-              model={{
-                message: msg.message,
-                // Đặt tên hiển thị theo sender
-                sender: msg.sender === 'bot' ? 'Bot' : 'You',
-                // Chỉ định hướng của tin nhắn
-                direction: msg.sender === 'bot' ? 'incoming' : 'outgoing',
-                position: 'normal',
-              }}
-            />
-          ))}
-        </MessageList>
-        <MessageInput 
-          placeholder="Nhập tin nhắn..."
-          onSend={handleSend}
-          disabled={isAwaitingBot} // disable input nếu đang chờ phản hồi
-        />
-      </ChatContainer>
-    </MainContainer>
+        <ChatContainer>
+          <MessageList
+            typingIndicator={isTyping ? <TypingIndicator content="Bot is typing..." /> : null}
+          >
+            {messages.map((msg) => (
+              <Message
+                key={msg.id}
+                model={{
+                  message: msg.message,
+                  sender: msg.sender === 'bot' ? 'Bot' : 'You',
+                  direction: msg.sender === 'bot' ? 'incoming' : 'outgoing',
+                  position: 'normal',
+                }}
+              />
+            ))}
+          </MessageList>
+
+          <MessageInput
+            placeholder="Nhập tin nhắn..."
+            onSend={handleSend}
+            disabled={isAwaitingBot} // disable khi đang chờ phản hồi
+          />
+        </ChatContainer>
+      </MainContainer>
     </div>
-    
   );
 };
 

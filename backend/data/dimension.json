@@ -1,0 +1,187 @@
+{
+  "bed_1": {
+    "width": "2.27",
+    "height": "1.51",
+    "depth": "2.42"
+  },
+  "bed_simple": {
+    "width": "2.08",
+    "height": "0.99",
+    "depth": "2.29"
+  },
+  "bhadoi_rug": {
+    "width": "2.41",
+    "height": "0.01",
+    "depth": "1.72"
+  },
+  "celestine_four_door_wardrobeobj": {
+    "width": "1.98",
+    "height": "1.81",
+    "depth": "0.72"
+  },
+  "desk": {
+    "width": "1.47",
+    "height": "0.74",
+    "depth": "0.71"
+  },
+  "door_with_cardreader": {
+    "width": "1.03",
+    "height": "2.16",
+    "depth": "0.26"
+  },
+  "fly_dinner_chair": {
+    "width": "0.69",
+    "height": "1.06",
+    "depth": "0.78"
+  },
+  "folding_table": {
+    "width": "1.02",
+    "height": "0.68",
+    "depth": "0.64"
+  },
+  "gaming_chair": {
+    "width": "0.80",
+    "height": "1.50",
+    "depth": "0.85"
+  },
+  "ikea_markus_office_chair": {
+    "width": "0.53",
+    "height": "0.90",
+    "depth": "0.53"
+  },
+  "industrial_table": {
+    "width": "1.50",
+    "height": "0.67",
+    "depth": "0.80"
+  },
+  "kuuma_ye_rug_by_kristiina_lassus": {
+    "width": "2.42",
+    "height": "0.01",
+    "depth": "2.11"
+  },
+  "lewie_console_table": {
+    "width": "2.03",
+    "height": "0.84",
+    "depth": "0.52"
+  },
+  "modern_door": {
+    "width": "1.22",
+    "height": "1.89",
+    "depth": "0.19"
+  },
+  "modern_door_1": {
+    "width": "1.58",
+    "height": "1.79",
+    "depth": "0.19"
+  },
+  "modern_industrial_desk": {
+    "width": "1.36",
+    "height": "0.85",
+    "depth": "0.43"
+  },
+  "modern_metal_windowed_door": {
+    "width": "1.02",
+    "height": "2.75",
+    "depth": "0.31"
+  },
+  "modern_wood_door": {
+    "width": "0.83",
+    "height": "1.76",
+    "depth": "0.13"
+  },
+  "noguchi_coffee_table": {
+    "width": "1.64",
+    "height": "0.50",
+    "depth": "1.18"
+  },
+  "office_chair": {
+    "width": "1.28",
+    "height": "2.00",
+    "depth": "1.36"
+  },
+  "office_desk_140x60": {
+    "width": "1.40",
+    "height": "0.76",
+    "depth": "0.60"
+  },
+  "poliform_bed": {
+    "width": "1.87",
+    "height": "0.68",
+    "depth": "2.02"
+  },
+  "pvc_still_window_with_sill": {
+    "width": "0.91",
+    "height": "1.50",
+    "depth": "0.13"
+  },
+  "queen-bed": {
+    "width": "1.75",
+    "height": "1.05",
+    "depth": "2.00"
+  },
+  "quersus_gaming_chair_vaos.3.1_pearl_white": {
+    "width": "1.33",
+    "height": "2.42",
+    "depth": "1.45"
+  },
+  "shelf": {
+    "width": "1.16",
+    "height": "1.62",
+    "depth": "0.20"
+  },
+  "soviet_table": {
+    "width": "1.94",
+    "height": "1.00",
+    "depth": "0.97"
+  },
+  "table": {
+    "width": "1.97",
+    "height": "0.94",
+    "depth": "0.69"
+  },
+  "table_1": {
+    "width": "2.00",
+    "height": "0.82",
+    "depth": "0.78"
+  },
+  "table_furniture": {
+    "width": "1.67",
+    "height": "1.00",
+    "depth": "0.60"
+  },
+  "wardrobe_classic": {
+    "width": "0.92",
+    "height": "2.03",
+    "depth": "0.79"
+  },
+  "wardrobe_low_poly": {
+    "width": "1.50",
+    "height": "2.16",
+    "depth": "0.68"
+  },
+  "window_1": {
+    "width": "2.50",
+    "height": "2.04",
+    "depth": "0.50"
+  },
+  "window_3": {
+    "width": "1.13",
+    "height": "1.42",
+    "depth": "0.13"
+  },
+  "window_4": {
+    "width": "1.88",
+    "height": "1.40",
+    "depth": "0.17"
+  },
+  "window_5": {
+    "width": "1.38",
+    "height": "1.45",
+    "depth": "0.10"
+  },
+  "wooden_cupboard_with_door": {
+    "width": "0.90",
+    "height": "1.33",
+    "depth": "0.37"
+  }
+}

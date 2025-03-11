@@ -4,6 +4,20 @@ import axios from 'axios';
 // flag sending data from user : "flowchart"
 
 
+export async function sendRefreshSignal(url="http://127.0.0.1:5000/api/refresh") {
+  try {
+    // Gửi request POST đến endpoint /refresh (bạn có thể đổi tuỳ ý)
+    const response = await axios.post(url, {
+      flag: 'refresh',
+      data: ''
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error sending refresh signal:', error);
+    throw error;
+  }
+}
+
 const sendToBackendDirec = async (data , url) => {
     try {
       const response = await axios.post(
@@ -28,15 +42,15 @@ export default function sendDataBackend({data  , flag  , url="http://127.0.0.1:5
         flag : flag ,
         data : data
     }
-    // res = sendToBackendDirec(data_extracted , url);
-    let res = {
-        "status" : "success",
-        "flag"   : flag ,
-        "data" : {
-            "chatbot" : "test ok",
-            "human"   : "test ok"
-        }
-    }
+    let res = sendToBackendDirec(data_extracted , url);
+    // let res = {
+    //     "status" : "success",
+    //     "flag"   : flag ,
+    //     "data" : {
+    //         "chatbot" : "test ok",
+    //         "human"   : "test ok"
+    //     }
+    // }
     return res
 }
 

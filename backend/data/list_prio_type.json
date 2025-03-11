@@ -1,0 +1,12 @@
+{
+    "priority" :[
+        "bed",
+        "table",
+        "chair",
+        "wardrobe",
+        "door",
+        "window",
+        "rug",
+        "decorateFurniture"
+    ] 
+}

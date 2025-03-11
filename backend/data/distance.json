@@ -1,0 +1,37 @@
+{
+    "bed": {
+        "bed": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "table": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "chair": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "wardrobe": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "rug": {"infrontup": 0, "behind": 0, "right": 0, "left": 0}
+    },
+    "table": {
+        "bed": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "table": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "chair": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "wardrobe": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "rug": {"infrontup": 0, "behind": 0, "right": 0, "left": 0}
+    },
+    "chair": {
+        "bed": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "table": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "chair": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "wardrobe": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "rug": {"infrontup": 0, "behind": 0, "right": 0, "left": 0}
+    },
+    "wardrobe": {
+        "bed": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "table": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "chair": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "wardrobe": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "rug": {"infrontup": 0, "behind": 0, "right": 0, "left": 0}
+    },
+    "rug": {
+        "bed": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "table": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "chair": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "wardrobe": {"infrontup": 0, "behind": 0, "right": 0, "left": 0},
+        "rug": {"infrontup": 0, "behind": 0, "right": 0, "left": 0}
+    }
+}

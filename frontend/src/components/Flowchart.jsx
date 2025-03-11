@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import sendDataBackend from '../ultis/sendtobackend';
 import {
   ReactFlow,
   useNodesState,
@@ -530,8 +531,10 @@ function Flowchart() {
     };
 
     console.log("Flow Data:", consoleData);
-    alert(JSON.stringify(alertData, null, 2));
+    // alert(JSON.stringify(alertData, null, 2));
     console.log(JSON.stringify(alertData, null, 2));
+    res = sendDataBackend({flag : 'flowchart', data: consoleData});
+    alert(res);
   };
 
   const handleContextMenu = (event) => {

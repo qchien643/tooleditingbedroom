@@ -1,4 +1,5 @@
 import { ReactFlowProvider } from '@xyflow/react';
+import { useEffect } from 'react';
 
 import { PanelGroup, Panel, PanelResizeHandle } from 'react-resizable-panels';
 
@@ -7,6 +8,8 @@ import "./App.css";
 import ModelEditor from "./components/ModelEditor"
 import Flowchart from "./components/FlowChart"
 import ChatbotUI from './components/ChatBotUI';
+
+import { sendRefreshSignal } from './ultis/sendtobackend';
 
   const models = [
     { id: 'modelA', path: './adjust_root_optimize/bed_1.glb', position: [0, 0, 0] },
@@ -35,6 +38,20 @@ import ChatbotUI from './components/ChatBotUI';
 // }
 
 export default function App(){
+
+
+  useEffect(() => {
+    // Khi component mount (trang tải), gọi hàm gửi refresh signal
+    (async () => {
+      try {
+        const data = await sendRefreshSignal();
+        console.log('Refresh signal sent. Server responded:', data);
+      } catch (err) {
+        console.error('Error:', err);
+      }
+    })();
+  }, []);
+
   return (
     <div className="container">
       {/* Thanh title */}

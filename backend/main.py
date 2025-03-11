@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import the CORS class
 import json 
 
-app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True, methods=["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"])
+from testChecktypeofchatuser import * 
+
 
 # default prompt = tôi muốn xây phòng ngủ với một chiếc bàn hiện đại , một chiếc giường mới và một chiếc tủ to
 
@@ -57,29 +57,43 @@ CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True, me
     }
 """
 
-# stated-based function dispatch
-def extract_prompt(prompt):
-    pass
+        
 
 def dispatcher(datas):
     flag , data = datas["flag"] , datas["data"]
     if flag == 'message':
-        # câu hỏi của người dùng sẽ có các trạng thái : yêu cầu , sửa đổi , chưa rõ 
-        # đơn giản hóa trường hợp ở sau chỉ là yêu cầu
-        promptUser = data["message"]
-        return extract_prompt(promptUser)
+        promptUser = data[-1]["message"]
+        type_of_mess = classify_type_of_mess(promptUser)
+        res = {
+            "flag" : flag ,
+            "data" : type_of_mess
+        }
+        return res
 
+app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True, methods=["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"])
 
 @app.route('/api/chat', methods=['GET', 'POST'])
 def chat():
     try:
         data = request.get_json()
+        
         res = dispatcher(data)  
         return jsonify(res)
 
     except Exception as e:
         print(f"Error processing request: {str(e)}")
         return jsonify({'error': 'Internal Server Error'}), 500
+
+@app.route("/api/refresh", methods=["POST"])
+def refresh():
+    data = request.get_json()
+    if data and data.get('flag') == "refresh":
+        # Thực hiện logic reset / khởi tạo / đánh dấu "đã refresh" ...
+        print("Client vừa gửi yêu cầu refresh!")
+        resert_chat_history()
+        
+    return jsonify({"status": "OK", "message": "Refresh request received"})
 
 
 if __name__ == '__main__':
