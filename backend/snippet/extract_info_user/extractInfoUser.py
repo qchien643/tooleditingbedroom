@@ -176,10 +176,7 @@ def extractInfoUser(input):
     dict_return = json.loads(chat_completion.choices[0].message.content)
     return dict_return
 
-# openai_api_key = "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"
-# client = OpenAI(
-#     api_key=openai_api_key,
-#     base_url = "https://api.openai.com/v1")
+
 
 
 # def extractInfoUser(input):
