@@ -25,8 +25,15 @@ Based on the context, respond with only one of these three labels.
 """
 
 
-GROQ_API_KEY = "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"
- 
+from dotenv import load_dotenv
+import os
+
+# Tải các biến môi trường từ file .env
+load_dotenv()
+
+# Lấy giá trị API Key từ môi trường
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 
 from groq import Groq
@@ -67,10 +74,9 @@ def use_groq(input):
     res =  chat_completion.choices[0].message.content
     return str(res)
 
-openai_api_key = "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"
 def use_gpt(prompt):
     client = OpenAI(
-    api_key=openai_api_key,
+    api_key=OPENAI_API_KEY,
     base_url = "https://api.openai.com/v1")
 
     response = client.chat.completions.create(
