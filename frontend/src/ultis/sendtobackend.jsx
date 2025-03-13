@@ -9,6 +9,7 @@ export async function sendRefreshSignal(url="http://127.0.0.1:5000/api/refresh")
     // Gửi request POST đến endpoint /refresh (bạn có thể đổi tuỳ ý)
     const response = await axios.post(url, {
       flag: 'refresh',
+      status : "",
       data: ''
     });
     return response.data;
@@ -37,9 +38,10 @@ const sendToBackendDirec = async (data , url) => {
     }
   }
 
-export default function sendDataBackend({data  , flag  , url="http://127.0.0.1:5000/api/chat" }){
+export default function sendDataBackend({data  , flag  , status = "" , url="http://127.0.0.1:5000/api/chat" }){
     let data_extracted = {
         flag : flag ,
+        status : status ,
         data : data
     }
     let res = sendToBackendDirec(data_extracted , url);

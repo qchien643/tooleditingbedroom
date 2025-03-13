@@ -4,63 +4,12 @@ import json
 
 from testChecktypeofchatuser import * 
 
-
-# default prompt = tôi muốn xây phòng ngủ với một chiếc bàn hiện đại , một chiếc giường mới và một chiếc tủ to
-
-# NOTE : format of data from frontend""""
-#      {
-#         flag : flag ,
-#         data : data
-#     }
-# ""
-
-"""
- flag sending data from chatbot : "message"
- flag sending data from user : "flowchart"
- 
- +format base on flag:
- 
- -flag : "message" 
- --> {
-        flag : <flag>,
-        data : {
-            prompt : <prompt>
-        }
-    }
-
--flag : "flowchart"
--->{
-        flag : <flag>,
-        data : {
-            "room": {
-                "floor": "tile",
-                "wall": "brick",
-                "dimension": [
-                "5",
-                "5",
-                "5"
-                ]
-            },
-            "furnitures": [
-                {
-                "type": "chair",
-                "model": "gaming_chair",
-                "placement": "BehindFurnitureRule table [] center | SameDirection table []"
-                },
-                {
-                "type": "bed",
-                "model": "bed_1",
-                "placement": "NextToWallRule None ['E', 'S'] left | SameDirectionWall None ['E', 'S']"
-                }
-            ]
-        }
-    }
-"""
-
+def extractInfoUser(prompt) :
+    pass
         
-
 def dispatcher(datas):
-    flag , data = datas["flag"] , datas["data"]
+    flag , data , status = datas["flag"] , datas["data"] , datas["status"]
+    
     if flag == 'message':
         promptUser = data[-1]["message"]
         type_of_mess = classify_type_of_mess(promptUser)
@@ -69,7 +18,17 @@ def dispatcher(datas):
             "data" : type_of_mess
         }
         return res
+    
+    elif flag == 'flowchart':
+        
+        if status == "start" :
+            print(datas)
+            res = {"flag" : flag , "status" : status , "data" :"hi"}
+            
+        elif status == "restart": pass
 
+        return res
+    
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True, methods=["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"])
 

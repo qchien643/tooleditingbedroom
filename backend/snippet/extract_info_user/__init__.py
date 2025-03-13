@@ -1,1 +1,0 @@
-from .extractInfoUser import extractInfoUser

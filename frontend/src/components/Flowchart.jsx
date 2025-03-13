@@ -532,9 +532,9 @@ function Flowchart() {
 
     console.log("Flow Data:", consoleData);
     // alert(JSON.stringify(alertData, null, 2));
-    console.log(JSON.stringify(alertData, null, 2));
-    res = sendDataBackend({flag : 'flowchart', data: consoleData});
-    alert(res);
+    // console.log(JSON.stringify(alertData, null, 2));
+    const res = sendDataBackend({flag : 'flowchart',status : "start" ,data: consoleData});
+    
   };
 
   const handleContextMenu = (event) => {

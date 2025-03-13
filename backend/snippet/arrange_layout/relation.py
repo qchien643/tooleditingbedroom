@@ -1,4 +1,4 @@
-from .custom_type import *
+from snippet.arrange_layout.custom_type import *
 
 class Room:
     def __init__(self,dimension):
@@ -219,4 +219,3 @@ class Rug(Furniture):
 class DecorateFurniture(Furniture) :
     def __init__(self, name, dimension,distance):
         super().__init__(name, "decorateFurniture", dimension)       
-

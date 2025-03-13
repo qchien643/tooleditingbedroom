@@ -45,7 +45,8 @@ const ChatbotUI = () => {
     // Gọi API/hàm gửi dữ liệu tới backend
     const botResponse = await sendDataBackend({
       data: updatedMessages,
-      flag: 'message'
+      flag: 'message',
+      status : ""
     });
 
     // Tạo tin nhắn phản hồi của bot

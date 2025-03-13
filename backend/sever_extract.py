@@ -2,12 +2,14 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import the CORS class
 import json 
 
+from snippet import relation, custom_type, extractInfoUser, generateLayout
 
-from snippet.arrange_layout import relation
-from snippet.arrange_layout import custom_type
-from snippet.arrange_layout import *
-from snippet.extract_info_user.extractInfoUser import extractInfoUser
-from snippet.generate_layout.generateLayout import generateLayout
+
+# from snippet.arrange_layout import relation
+# from snippet.arrange_layout import custom_type
+# from snippet.arrange_layout import *
+# from snippet.extract_info_user.extractInfoUser import extractInfoUser
+# from snippet.generate_layout.generateLayout import generateLayout
 
 def sort_by_type(data , priority_order ):
    
